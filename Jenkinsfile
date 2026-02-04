@@ -95,9 +95,9 @@ pipeline {
 
                       git remote set-url origin https://${GIT_USER}:${GIT_TOKEN}@github.com/tailszhang0/helm-prometheus-demo.git
 
-                      yq -i '.app.tag = "'$IMAGE_TAG'"' charts/pure-stack/values.yaml
+                      yq -i '.app.tag = "'$IMAGE_TAG'"' charts/helm-prometheus-stack/values.yaml
 
-                      git add charts/pure-stack/values.yaml
+                      git add charts/helm-prometheus-stack/values.yaml
                       git commit -m "Update image to $IMAGE_TAG"
                       git push origin main
                     '''

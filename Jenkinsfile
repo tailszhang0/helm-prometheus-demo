@@ -16,7 +16,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG app/.'
+                sh 'docker build -f app/Dockerfile -t $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG .'
                 sh 'docker tag $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG $DOCKERHUB_USER/$IMAGE_NAME:latest'
             }
         }

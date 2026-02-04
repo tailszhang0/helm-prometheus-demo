@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/tailszhang0/helm-prometheus-demo.git
     targetRevision: HEAD
-    path: charts/pure-stack
+    path: charts/helm-prometheus-stack
     helm:
       valueFiles:
         - values.yaml

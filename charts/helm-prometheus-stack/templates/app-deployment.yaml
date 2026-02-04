@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helm-prometheus-app
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.app.replicas }}
+  selector:
+    matchLabels:
+      app: helm-prometheus-app
+  template:
+    metadata:
+      labels:
+        app: helm-prometheus-app
+    spec:
+      containers:
+        - name: helm-prometheus-app
+          image: {{ .Values.app.image }}:{{ .Values.app.tag }}
+          ports:
+            - containerPort: {{ .Values.app.port }}

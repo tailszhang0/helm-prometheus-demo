@@ -1,0 +1,7 @@
+helm install demo ./charts/helm-prometheus-stack
+kubectl apply -f argocd/helm-prometheus-app-application.yaml
+
+
+
+helm uninstall demo -n helm-prometheus
+kubectl delete -f argocd/helm-prometheus-app-application.yaml

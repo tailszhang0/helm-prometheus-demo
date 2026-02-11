@@ -1,7 +1,7 @@
 namespace: helm-prometheus
 app:
   image: tails1982/helm-prometheus-app
-  tag: "3"
+  tag: "4"
   port: 5000
   replicas: 1
 prometheus:

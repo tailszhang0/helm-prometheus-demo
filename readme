@@ -2,7 +2,7 @@ Quick start:
 export HTTP_PROXY=http://127.0.0.1:7890
 export HTTPS_PROXY=http://127.0.0.1:7890
 
-helm install demo ./charts/helm-prometheus-stack
+helm install demo ./charts/helm-prometheus-stack -n helm-prometheus --create-namespace
 kubectl apply -f argocd/helm-prometheus-app-application.yaml
 
 kubectl get all -n helm-prometheus
